@@ -1,1 +1,1 @@
-# Shannon-s-Encoding
+# Shannon's-Encoding
