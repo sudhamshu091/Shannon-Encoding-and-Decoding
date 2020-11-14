@@ -20,12 +20,12 @@ def divide_list(list):
         n = 0
         for i in list:
             n+= i[1]
-        x = 0
-        distance = abs(2*x - n)
+        m = 0
+        distance = abs(2*m - n)
         j = 0
         for i in range(len(list)):
-            x += list[i][1]
-            if distance < abs(2*x - n):
+            m += list[i][1]
+            if distance < abs(2*m - n):
                 j = i
     return list[0:j+1], list[j+1:]
 
