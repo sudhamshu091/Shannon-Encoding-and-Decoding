@@ -51,8 +51,13 @@ def label_list(list):
 
 code = label_list(create_list(message))
 print("Shannon's Encoded Code:")
-print("Compressed file generated as compressed.txt")
 output = open("compressed.txt","w+")
 for key, value in code.items():
     print(key, ' : ', value)
-    output.write(value)
+print("Compressed file generated as compressed.txt")
+for a in message:
+    for key, value in code.items():
+        if key in a:
+            print(key, ' : ', value)
+            output.write(value)
+
