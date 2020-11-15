@@ -1,5 +1,12 @@
 import collections
-message = input("Enter the message:")
+h = int(input("Enter 1 if you want to enter in command window, 2 if you are using .txt file:"))
+if h == 1:
+    message = input("Enter the message:")
+if h == 2:
+    file = input("Enter the filename:")
+    with open(file, 'r') as f:
+        message = f.read()
+
 c = {}
 
 def create_list(message):
@@ -20,12 +27,12 @@ def divide_list(list):
         n = 0
         for i in list:
             n+= i[1]
-        m = 0
-        distance = abs(2*m - n)
+        x = 0
+        distance = abs(2*x - n)
         j = 0
         for i in range(len(list)):
-            m += list[i][1]
-            if distance < abs(2*m - n):
+            x += list[i][1]
+            if distance < abs(2*x - n):
                 j = i
     return list[0:j+1], list[j+1:]
 
