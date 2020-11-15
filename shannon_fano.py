@@ -2,10 +2,12 @@ import collections
 h = int(input("Enter 1 if you want to enter in command window, 2 if you are using .txt file:"))
 if h == 1:
     message = input("Enter the message:")
-if h == 2:
+elif h == 2:
     file = input("Enter the filename:")
     with open(file, 'r') as f:
         message = f.read()
+else:
+    print("You entered invalid input")
 
 c = {}
 
