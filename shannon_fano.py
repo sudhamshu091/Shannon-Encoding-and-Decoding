@@ -1,5 +1,5 @@
 import collections
-h = int(input("Enter 1 if you want to enter in command window, 2 if you are using .txt file:"))
+h = int(input("Enter 1 if you want to enter in command window, 2 if you are using input as file:"))
 if h == 1:
     message = input("Enter the message:")
 elif h == 2:
