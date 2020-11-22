@@ -54,12 +54,32 @@ def label_list(list):
 code = label_list(create_list(message))
 print("Shannon's Encoded Code:")
 output = open("compressed.txt","w+")
+letter_binary = []
 for key, value in code.items():
     print(key, ' : ', value)
+    letter_binary.append([key,value])
 print("Compressed file generated as compressed.txt")
 for a in message:
     for key, value in code.items():
         if key in a:
             print(key, ' : ', value)
             output.write(value)
+output = open("compressed.txt","r")
+intermediate = output.readlines()
+bitstring = ""
+for digit in intermediate:
+    bitstring = bitstring + digit
+uncompressed_string =""
+code =""
+for digit in bitstring:
+    code = code+digit
+    pos=0
+    for letter in letter_binary:
+        if code ==letter[1]:
+            uncompressed_string=uncompressed_string+letter_binary[pos] [0]
+            code=""
+        pos+=1
+
+print("Your UNCOMPRESSED data is:")
+print(uncompressed_string)
 
