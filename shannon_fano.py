@@ -1,16 +1,18 @@
+print("Shannon Compression Program")
+print("=================================================================")
 import collections
 h = int(input("Enter 1 if you want to enter in command window, 2 if you are using input as file :"))
 if h == 1:
-    message = input("Enter the message:")
+    message = input("Enter the string you want to compress:")
 elif h == 2:
     file = input("Enter the filename:")
     with open(file, 'r') as f:
         message = f.read()
 else:
     print("You entered invalid input")
+print("Entered string is:",message)
 
 c = {}
-
 def create_list(message):
     list = dict(collections.Counter(message))
     for key, value in list.items():
@@ -21,9 +23,10 @@ def create_list(message):
     for key,value in list_sorted:
         final_list.append([key,value,''])
     return final_list
-
+print("Shannon tree with merged pathways:")
 def divide_list(list):
     if len(list) == 2:
+        print([list[0]],[list[1]])
         return [list[0]],[list[1]]
     else:
         n = 0
@@ -36,7 +39,9 @@ def divide_list(list):
             x += list[i][1]
             if distance < abs(2*x - n):
                 j = i
+    print(list[0:j+1], list[j+1:])
     return list[0:j+1], list[j+1:]
+
 
 def label_list(list):
     list1,list2 = divide_list(list)
