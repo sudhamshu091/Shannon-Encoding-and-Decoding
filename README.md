@@ -1,4 +1,4 @@
-# Shannon's-Encoding
+# Shannon's-Encoding and Decoding
 Example Problem:
 ![](sample_outputs/example.jpg)
 How tree is generated using algorithm:
